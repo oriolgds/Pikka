@@ -1,7 +1,12 @@
 <mat-sidenav-container style="background-color: var(--lighter);">
     <mat-sidenav #sidenav mode="over">
         <!-- Sidenav content goes here -->
-        <p>Sidenav content</p>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Item 1</mat-list-item>
+            <mat-list-item role="listitem">Item 2</mat-list-item>
+            <mat-list-item role="listitem">Item 3</mat-list-item>
+        </mat-list>
+
     </mat-sidenav>
 
     <app-header (toggleSidenavEvent)="toggleSidenav()"></app-header>

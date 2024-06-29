@@ -8,6 +8,7 @@
 mat-toolbar {
     background-color: transparent !important;
     color: var(--light);
+    align-items: center;
 }
 mat-icon {
     color: var(--light);

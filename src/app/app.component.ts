@@ -5,10 +5,12 @@ import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MainPageComponent, HeaderComponent, SearchBarComponent, MatSidenavModule, FooterComponent],
+  imports: [RouterOutlet, MainPageComponent, HeaderComponent, SearchBarComponent, MatSidenavModule, FooterComponent, MatListModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
