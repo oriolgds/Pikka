@@ -1,0 +1,14 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+#header-container {
+    background-color: var(--primary);
+    color: var(--light);
+}
+mat-toolbar {
+    background-color: transparent !important;
+    color: var(--light);
+}
+mat-icon {
+    color: var(--light);
+}
