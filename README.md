@@ -19,3 +19,6 @@ git clone https://github.com/oriolgds/pikka.git
 cd pikka
 npm install
 ```
+
+## Contribuciones
+Para contribuir lea el [CONTRIBUTING.md](https://github.com/oriolgds/pikka/CONTRIBUTING.md)
