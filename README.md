@@ -21,4 +21,4 @@ npm install
 ```
 
 ## Contribuciones
-Para contribuir lea el [CONTRIBUTING.md](https://github.com/oriolgds/pikka/CONTRIBUTING.md)
+Para contribuir lea el [CONTRIBUTING.md](https://github.com/oriolgds/pikka/blob/master/CONTRIBUTING.md)
