@@ -1,5 +1,10 @@
+img, #text {
+    max-width: 480px;
+}
 img {
     width: 100%;
-    max-width: 480px;
     /* Adjust blur and color as needed */
+}
+#text {
+    background-color: var(--quaternary);
 }
