@@ -1,40 +1,36 @@
 <div class="container">
   <div class="display-6 mb-3">Suggested recepies 💡</div>
-  <div *ngIf="meals.length > 0;" id="sugested-food" class="carousel slide" data-bs-ride="true">
-      <div class="carousel-indicators">
-        <button *ngFor="let meal of meals; let i = index" data-bs-target="#sugested-food" [attr.data-bs-slide-to]="i" [attr.class]="i == 0 ? 'active': ''"></button>      
-      </div>
-      <div class="carousel-inner rounded-2">
-        <div class="carousel-item" [ngClass]="i == 0 ? 'active' : ''" *ngFor="let meal of meals; let i = index" data-bs-interval="2000">
-          <a [href]="meal.strSource" target="_blank">
-            <img [src]="meal.strMealThumb" class="d-block w-100" alt="...">
-          </a>       
-          <div class="carousel-caption d-md-block" style="background-color: #222c; border-radius: 20px;">
-            <h5>{{meal.strMeal}}</h5>
-            <p>{{meal.strArea}}, {{meal.strCategory}}</p>
-          </div>
+  <div *ngIf="meals.length > 0; else noImages" id="sugested-food" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button *ngFor="let meal of meals; let i = index" data-bs-target="#sugested-food" [attr.data-bs-slide-to]="i"
+        [attr.class]="i == 0 ? 'active': ''"></button>
+    </div>
+    <div class="carousel-inner rounded-2">
+      <div class="carousel-item" [ngClass]="i == 0 ? 'active' : ''" *ngFor="let meal of meals; let i = index"
+        data-bs-interval="2000">
+        <a [href]="meal.strSource" target="_blank">
+          <img [src]="meal.strMealThumb" class="d-block w-100" alt="...">
+        </a>
+        <div class="carousel-caption d-md-block" style="background-color: #222c; border-radius: 20px;">
+          <h5>{{meal.strMeal}}</h5>
+          <p>{{meal.strArea}}, {{meal.strCategory}}</p>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#sugested-food" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#sugested-food" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-  </div>
-</div>
-<!-- <div *ngIf="images.length > 0; else noImages">
-  <div class="carrousel">
-    <div *ngFor="let image of images" class="carrousel-item">
-      <img [src]="image">
-      <p>{{ image.description }}</p>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#sugested-food" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#sugested-food" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>
 <ng-template #noImages>
-  <p>No images available.</p>
-</ng-template> -->
-
-  
+  <p>There has been an error while fetching suggested recepies. Please try again in few minutes and if still happens,
+    please contact us.</p>
+  <div style="text-align: center;">
+    <button (click)="Reload()" mat-flat-button><mat-icon>refresh</mat-icon>{{refreshButtonText}}</button>
+  </div>
+</ng-template>
