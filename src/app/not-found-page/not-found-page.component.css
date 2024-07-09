@@ -8,3 +8,24 @@ img {
 #text {
     background-color: var(--quaternary);
 }
+a {
+    
+    text-decoration: none;
+    color: rgb(26, 27, 31);
+}
+a:hover {
+    color: var(--secondary);
+}
+img, #text {
+    transition: 300ms all;
+    border-radius: var(--bs-border-radius);
+}
+@media (min-width: 768px) {
+    img {
+        border-radius: var(--bs-border-radius) 0px 0px var(--bs-border-radius);
+    }
+    #text {
+        border-radius: 0px var(--bs-border-radius) var(--bs-border-radius) 0px;
+    }
+}
+
