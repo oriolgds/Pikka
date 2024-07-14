@@ -1,9 +1,10 @@
 <div class="container">
   <div class="display-6 mb-3">Suggested recepies 💡</div>
-  <div *ngIf="meals.length > 0; else noImages" id="sugested-food" class="carousel slide" data-bs-ride="true">
+  @if (fetched && meals.length > 0){
+  <div id="sugested-food" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
-      <button *ngFor="let meal of meals; let i = index" data-bs-target="#sugested-food" attr.aria-label="Slide {{i + 1}}" [attr.data-bs-slide-to]="i"
-        [attr.class]="i == 0 ? 'active': ''"></button>
+      <button *ngFor="let meal of meals; let i = index" data-bs-target="#sugested-food"
+        attr.aria-label="Slide {{i + 1}}" [attr.data-bs-slide-to]="i" [attr.class]="i == 0 ? 'active': ''"></button>
     </div>
     <div class="carousel-inner rounded-2">
       <div class="carousel-item" [ngClass]="i == 0 ? 'active' : ''" *ngFor="let meal of meals; let i = index"
@@ -26,11 +27,20 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-</div>
-<ng-template #noImages>
-  <p>There has been an error while fetching suggested recepies. Please try again in few minutes and if still happens,
+  } @else {
+  @if(meals.length === 0 && fetched){
+  <p>There has been an error while fetching suggested recepies. Please try again in few minutes and if still
+    happens,
     please contact us.</p>
   <div style="text-align: center;">
     <button (click)="Reload()" mat-flat-button><mat-icon>refresh</mat-icon>{{refreshButtonText}}</button>
   </div>
-</ng-template>
+  }
+  @else {
+    <div style="display: flex; justify-content: center; align-items: center; align-content: center;">
+      <mat-spinner mode="indeterminate" diameter="40"></mat-spinner>
+    </div>
+  }
+  }
+
+</div>
