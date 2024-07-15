@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
+import { CommonModule } from '@angular/common';
+import {MatButtonModule} from '@angular/material/button';
 @Component({
   selector: 'app-search-results-page',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule],
   templateUrl: './search-results-page.component.html',
   styleUrl: './search-results-page.component.css'
 })
 export class SearchResultsPageComponent {
-  data: any = {};
+  meals: any;
   result: String = '';
   error: boolean = false;
   constructor(private route: ActivatedRoute) {
@@ -32,7 +34,7 @@ export class SearchResultsPageComponent {
       .then(data => {
         // Process the fetched data here
         console.log(data);
-        this.data = data;
+        this.meals = data;
       })
       .catch(error => {
         this.error = true;

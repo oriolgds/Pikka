@@ -1,0 +1,6 @@
+#buttons-row {
+    padding: 0px 10px;
+}
+#buttons-row button {
+    max-width: 300px;
+}
