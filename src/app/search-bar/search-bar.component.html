@@ -2,10 +2,10 @@
   <div class="example-form container">
       <mat-form-field class="example-full-width me-1" style="display: flex;">
         <mat-label>Search a receipe you want</mat-label>
-        <input [(ngModel)]="input" id="search-input" matInput placeholder="Ex. Chocolate Cake">
+        <input [(ngModel)]="input" id="search-input" (keypress)="Search()" (change)="Search()" (submit)="Search()" matInput placeholder="Ex. Chocolate Cake">
         
       </mat-form-field>
-      <button (click)="Search()" mat-icon-button aria-label="Search button">
+      <button (click)="Search()"  mat-icon-button aria-label="Search button">
         <mat-icon>search</mat-icon>
       </button>
       <!-- <button mat-fab class="ms-2" (click)="Search()" color="primary"><mat-icon>search</mat-icon></button> -->
