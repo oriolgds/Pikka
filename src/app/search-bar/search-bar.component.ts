@@ -5,11 +5,11 @@ import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import {MatSelectModule} from '@angular/material/select';
 @Component({
   selector: 'app-search-bar',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule],
+  imports: [FormsModule, MatSelectModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.css'
 })

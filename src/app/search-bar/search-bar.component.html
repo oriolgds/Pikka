@@ -5,9 +5,18 @@
         <input [(ngModel)]="input" id="search-input" (keypress)="Search()" (change)="Search()" (submit)="Search()" matInput placeholder="Ex. Chocolate Cake">
         
       </mat-form-field>
+      <!-- Filter button -->
+      <mat-form-field>
+        <mat-label>Filter by</mat-label>
+        <mat-select>
+          <mat-option value="first">First letters</mat-option>
+          <mat-option value="category">Category</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
       <button (click)="Search()"  mat-icon-button aria-label="Search button">
         <mat-icon>search</mat-icon>
-      </button>
+      </button>      
       <!-- <button mat-fab class="ms-2" (click)="Search()" color="primary"><mat-icon>search</mat-icon></button> -->
   </div>
 </div>

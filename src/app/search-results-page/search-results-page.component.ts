@@ -3,10 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 @Component({
   selector: 'app-search-results-page',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, ScrollingModule],
   templateUrl: './search-results-page.component.html',
   styleUrl: './search-results-page.component.css'
 })
