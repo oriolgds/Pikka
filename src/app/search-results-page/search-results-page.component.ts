@@ -12,18 +12,32 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
   styleUrl: './search-results-page.component.css'
 })
 export class SearchResultsPageComponent {
+  mode: String = '';
   meals: any;
   result: String = '';
   error: boolean = false;
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       this.result = params['data'];
-      this.fetchRecipes(this.result);
+      this.mode = params['mode'];
+      this.fetchRecipes(this.result, this.mode);
       // Fetch recipes or update the view based on the new data
     });
   }
-  fetchRecipes(name: String) {
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
+  fetchRecipes(name: String, mode: String) {
+    let factor = 's';
+    if(mode == 'normal'){
+      factor = 's';
+    }
+    else if(mode == 'first')
+      factor = 'f';
+    else if(mode == 'id'){
+      factor = 'i';
+    }
+    else {
+      factor = 's';
+    }
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?${factor}=${name}`;
     fetch(url)
       .then(response => {
         if (!response.ok) {

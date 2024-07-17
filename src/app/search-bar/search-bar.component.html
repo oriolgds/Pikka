@@ -1,23 +1,26 @@
 <div id="form-container">
   <div class="example-form container">
-      <mat-form-field class="example-full-width me-1" style="display: flex;">
-        <mat-label>Search a receipe you want</mat-label>
-        <input [(ngModel)]="input" id="search-input" (keypress)="Search()" (change)="Search()" (submit)="Search()" matInput placeholder="Ex. Chocolate Cake">
-        
-      </mat-form-field>
-      <!-- Filter button -->
-      <mat-form-field>
-        <mat-label>Filter by</mat-label>
-        <mat-select>
-          <mat-option value="first">First letters</mat-option>
-          <mat-option value="category">Category</mat-option>
-        </mat-select>
-      </mat-form-field>
-      
-      <button (click)="Search()"  mat-icon-button aria-label="Search button">
-        <mat-icon>search</mat-icon>
-      </button>      
-      <!-- <button mat-fab class="ms-2" (click)="Search()" color="primary"><mat-icon>search</mat-icon></button> -->
+    <mat-form-field class="example-full-width me-1" style="display: flex;">
+      <mat-label>{{dynamicLabel}}</mat-label>
+      <input [(ngModel)]="input" id="search-input" (keypress)="Search()" (change)="Search()" (submit)="Search()"
+        matInput placeholder="Ex. Chocolate Cake">
+
+    </mat-form-field>
+    <!-- Filter button -->
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>tune</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <mat-radio-group [(ngModel)]="advancedSearch" (ngModelChange)="ChangeDynamicLabel()">
+        <mat-radio-button value="normal">Standard search</mat-radio-button>
+        <mat-radio-button value="first">Search by first letter</mat-radio-button>
+        <!-- <mat-radio-button value="id">Search by id</mat-radio-button> -->
+      </mat-radio-group>
+    </mat-menu>
+
+    <button (click)="Search()" mat-icon-button aria-label="Search button">
+      <mat-icon>search</mat-icon>
+    </button>
+    <!-- <button mat-fab class="ms-2" (click)="Search()" color="primary"><mat-icon>search</mat-icon></button> -->
   </div>
 </div>
-
