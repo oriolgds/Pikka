@@ -17,8 +17,18 @@ Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 ```bash
 git clone https://github.com/oriolgds/pikka.git
 cd pikka
-npm install
+npm ci
+npm start
 ```
+
+## Uso
+Puedes usar la app [aquí](https://oriolgds.github.io/pikka/)
 
 ## Contribuciones
 Para contribuir lea el [CONTRIBUTING.md](https://github.com/oriolgds/pikka/blob/master/CONTRIBUTING.md)
+
+## Licencia
+La licencia se encuentra en [LICENSE](https://github.com/oriolgds/pikka/blob/master/LICENSE). Además este proyecto sigue el [Código de Conducta de Contributor Covenant](https://www.contributor-covenant.org/es/version/2/0/code_of_conduct/). Por favor, lee y respeta este código de conducta en todas tus interacciones.
+
+## Créditos
+Agradecimientos a GitHub por hostear el proyecto, a Google por desarrollar un framework tan maravilloso como Angular, a más de proporcionarme un entorno de desarrollo en la nube rápidisimo y cómodo. Por último y más importante a [TheMealDB](https://www.themealdb.com/) por proporcionarme una API muy completa, fiable y rápida de comida, sin ellos este proyecto no se hubiese hecho realidad. Finalmente, gracias a todos los que motivais a hacer estos proyectos.
