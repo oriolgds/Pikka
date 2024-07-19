@@ -4,10 +4,11 @@ import {MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { MatIcon } from '@angular/material/icon';
 @Component({
   selector: 'app-search-results-page',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, ScrollingModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, ScrollingModule, MatIcon],
   templateUrl: './search-results-page.component.html',
   styleUrl: './search-results-page.component.css'
 })
@@ -25,19 +26,15 @@ export class SearchResultsPageComponent {
     });
   }
   fetchRecipes(name: String, mode: String) {
-    let factor = 's';
-    if(mode == 'normal'){
-      factor = 's';
-    }
+    let url :string;
+    if(mode == 'normal')
+      url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`   
     else if(mode == 'first')
-      factor = 'f';
-    else if(mode == 'id'){
-      factor = 'i';
-    }
-    else {
-      factor = 's';
-    }
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?${factor}=${name}`;
+      url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${name}` 
+    else if(mode == 'id')
+      url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${name}`
+    else 
+      url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}` 
     fetch(url)
       .then(response => {
         if (!response.ok) {

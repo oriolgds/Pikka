@@ -31,14 +31,14 @@ export class SearchBarComponent implements OnInit {
   advancedSearch: string = 'normal';
   changedToAdvancedSearch: boolean = false;
   input: string = "";
-  ngOnInit(): void {
-
-  }
   constructor(private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe(params => {
       this.input = params['data'];
+      this.advancedSearch = params['mode'];
       // Fetch recipes or update the view based on the new data
     });
+  }
+  ngOnInit(): void {
   }
   ChangeDynamicLabel(): void {
     if(this.advancedSearch != 'normal') this.changedToAdvancedSearch = true;

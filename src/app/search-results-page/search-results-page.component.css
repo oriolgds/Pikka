@@ -1,6 +1,6 @@
-#buttons-row {
-    padding: 0px 10px;
-}
-#buttons-row button {
-    max-width: 300px;
+#instructions {
+    text-overflow: ellipsis;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+    height: 80px;
 }

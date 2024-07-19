@@ -2,7 +2,7 @@
   <div class="example-form container">
     <mat-form-field class="example-full-width me-1" style="display: flex;">
       <mat-label>{{dynamicLabel}}</mat-label>
-      <input [(ngModel)]="input" id="search-input" (keypress)="Search()" (change)="Search()" (submit)="Search()"
+      <input [(ngModel)]="input" id="search-input" (keyup)="Search()"
         matInput placeholder="Ex. Chocolate Cake">
 
     </mat-form-field>
@@ -14,6 +14,7 @@
       <mat-radio-group [(ngModel)]="advancedSearch" (ngModelChange)="ChangeDynamicLabel()">
         <mat-radio-button value="normal">Standard search</mat-radio-button>
         <mat-radio-button value="first">Search by first letter</mat-radio-button>
+        <mat-radio-button value="id">Search by id</mat-radio-button>
         <!-- <mat-radio-button value="id">Search by id</mat-radio-button> -->
       </mat-radio-group>
     </mat-menu>
