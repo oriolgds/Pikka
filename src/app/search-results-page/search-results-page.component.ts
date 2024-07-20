@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { MatIcon } from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import {MatRippleModule} from '@angular/material/core';
 @Component({
   selector: 'app-search-results-page',
   standalone: true,
-  imports: [CommonModule, RouterLink, MatCardModule, MatButtonModule, ScrollingModule, MatIcon],
+  imports: [CommonModule, MatRippleModule, RouterLink, MatCardModule, MatButtonModule, ScrollingModule, MatIcon],
   templateUrl: './search-results-page.component.html',
   styleUrl: './search-results-page.component.css'
 })
@@ -18,7 +19,7 @@ export class SearchResultsPageComponent {
   meals: any;
   result: String = '';
   error: boolean = false;
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe(params => {
       this.result = params['data'];
       this.mode = params['mode'];
@@ -53,5 +54,12 @@ export class SearchResultsPageComponent {
         this.error = true;
         console.error('Error fetching recipes:', error);
       });
+  }
+  detailedView(id :string){
+    this.router.navigate(['detailed-view'], { queryParams: { id: id } }).then(nav => {
+      console.log(nav); // true if navigation is successful
+    }, err => {
+      console.log(err) // when there's an error
+    });
   }
 }

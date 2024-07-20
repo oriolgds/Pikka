@@ -1,19 +1,14 @@
 <div class="container">
-    <div class="my-2" *ngFor="let meal of meals['meals']">
-        <mat-card routerLink="/detailed-view?id={{meal.idMeal}}" appearance="outlined">
+    <div class="my-2" matRipple *ngFor="let meal of meals['meals']" style="">
+        <mat-card (click)="detailedView(meal.idMeal)" appearance="outlined">
             <mat-card-content>
                 <div class="row">
                     <div class="col-6">
                         <img [src]="meal.strMealThumb" class="w-100 rounded-2" alt="" />
                     </div>
-                    <div class="col-6">
-                        <h5 class="col-6">
-                            {{ meal.strMeal }}
-                        </h5>
-                        <div id="instructions">
-                            {{ meal.strInstructions }}
-                        </div>               
-                    </div>
+                    <h5 class="col text-break">
+                        {{ meal.strMeal }}
+                    </h5>   
                     
                     
                 </div>
