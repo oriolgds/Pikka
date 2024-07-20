@@ -5,10 +5,11 @@ import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-search-results-page',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, ScrollingModule, MatIcon],
+  imports: [CommonModule, RouterLink, MatCardModule, MatButtonModule, ScrollingModule, MatIcon],
   templateUrl: './search-results-page.component.html',
   styleUrl: './search-results-page.component.css'
 })

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="my-2" *ngFor="let meal of meals['meals']">
-        <mat-card appearance="outlined">
+        <mat-card routerLink="/detailed-view?id={{meal.idMeal}}" appearance="outlined">
             <mat-card-content>
                 <div class="row">
                     <div class="col-6">
